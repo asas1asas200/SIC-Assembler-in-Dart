@@ -25,4 +25,6 @@ void main(List<String> args) async {
   }
 
   print(parser.instructions);
+  parser.pass1();
+  print(parser.symbols);
 }
