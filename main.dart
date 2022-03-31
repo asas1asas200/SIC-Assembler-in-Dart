@@ -27,4 +27,8 @@ void main(List<String> args) async {
   print(parser.instructions);
   parser.pass1();
   print(parser.symbols);
+  assert(parser.proglen >= 0);
+  parser.pass2();
+  assert(parser.proglen >= 0);
+  print(parser.obj);
 }
