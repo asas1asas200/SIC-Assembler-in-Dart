@@ -30,5 +30,10 @@ void main(List<String> args) async {
   assert(parser.proglen >= 0);
   parser.pass2();
   assert(parser.proglen >= 0);
-  print(parser.obj);
+  print('---------------Obj file---------------');
+  parser.obj.forEach((line) => stdout.write(line));
+  print('\n--------------------------------------');
+
+  print('Dump file: ${parser.filename}.obj');
+  parser.dump();
 }

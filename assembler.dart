@@ -1,3 +1,5 @@
+import 'dart:io';
+
 class Assembler {
   final String filename;
   final List<List<String>> instructions;
@@ -50,6 +52,14 @@ class Assembler {
       return int.parse(instructions[0][2], radix: 16);
     }
     return 0;
+  }
+
+  void dump() async {
+    final file = File('$filename.obj');
+    file.writeAsString('');
+    obj.forEach((line) {
+      file.writeAsStringSync(line, mode: FileMode.append);
+    });
   }
 
   //TODO: Thrown exception when failed.
